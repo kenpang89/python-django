@@ -1,0 +1,6 @@
+.idea
+node_modules
+*.pyc
+package-lock.json
+profdi.sublime-workspace
+.DS_Store
