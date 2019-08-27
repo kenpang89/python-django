@@ -5,10 +5,24 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 image: python:3.7.3
 
+clone:
+  depth: full
 pipelines:
   default:
-    - step:
-        caches:
-          - pip
-        script: # Modify the commands below to build your repository.
-          - pip install -r requirements.txt
+      - step:
+          script:
+            - cat ./deploy.sh | ssh root@134.209.222.226
+            - echo "Deploy step finished"
+  branches:
+    develop:
+      - step:
+          deployment: staging
+          script:
+            - cat ./deploy.sh | ssh root@134.209.222.226
+            - echo "Deploy step finished"
+    master:
+      - step:
+          deployment: live
+          script:
+            - cat ./configs/deploy.sh | ssh root@134.209.222.226
+            - echo "Deploy step finished"
