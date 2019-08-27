@@ -22,7 +22,7 @@ pipelines:
             - echo "Deploy step finished"
     master:
       - step:
-          deployment: live
+          deployment: production
           script:
             - cat ./configs/deploy.sh | ssh root@134.209.222.226
             - echo "Deploy step finished"
