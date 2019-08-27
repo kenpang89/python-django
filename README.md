@@ -4,6 +4,7 @@
 1. Install necessary packages.
 
     `$ sudo apt-get update`
+
     `$ sudo apt-get install nginx python3-pip python3-dev ufw virtualenv postgresql postgresql-contrib libpq-dev`
 
 2. Install virtualenvwrapper & Config Shell Startup File & Create virtualenv folder.
@@ -19,9 +20,11 @@
     `$ sudo vim ~/.bashrc`
     and paste below script.
 
-    `export WORKON_HOME="/home/user_name/envs"`
-    `export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"`
-    `source "/home/user_name/.local/bin/virtualenvwrapper.sh"`
+    ```
+    export WORKON_HOME="/home/user_name/envs"
+    export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
+    source "/home/user_name/.local/bin/virtualenvwrapper.sh"
+    ```
 
     We can get path of `python3` and `virtualenvwrapper.sh` with `which` 
 
@@ -58,7 +61,9 @@
 5. Migrate DB & Create super user & run server .
 
     `(env) $ python3 manage.py migrate`
+
     `(env) $ python3 manage.py createsuperuser`
+
     `(env) $ python3 manage.py runserver`
 
     It's engough for developing project in local.
@@ -99,12 +104,15 @@
 - Start gunicorn
 
     `$ sudo systemctl enable gunicorn.service`
+
     `$ sudo systemctl start gunicorn.service`
+
     `$ sudo systemctl status gunicorn.service`
 
     if you changed something restart gunicorn with the following command
 
     `$ sudo systemctl daemon-reload`
+
     `$ sudo systemctl restart gunicorn`
 
 7. Configuring nginx
@@ -136,6 +144,7 @@
 8. Add a link of the nginx configuration & check the config.
 
     `$ sudo ln -s /etc/nginx/sites-available/helloworld /etc/nginx/sites-enabled`
+    
     `$ sudo nginx -t`
 
     if everything worked fine restart nginx with the following command
