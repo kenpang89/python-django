@@ -8,9 +8,11 @@
     `$ sudo apt-get install nginx python3-pip python3-dev ufw virtualenv postgresql postgresql-contrib libpq-dev`
 
 2. Install virtualenvwrapper & Config Shell Startup File & Create virtualenv folder.
+
 - Create virtualevns folder
 
     `$ sudo mkdir /home/user_name/envs`
+
 - Install virtualenvwrapper
 
     `$ sudo pip3 install virtualenvwrapper`
@@ -18,11 +20,14 @@
 - Open .bashrc file
 
     `$ sudo vim ~/.bashrc`
+
     and paste below script.
 
     ```
     export WORKON_HOME="/home/user_name/envs"
+
     export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python3"
+
     source "/home/user_name/.local/bin/virtualenvwrapper.sh"
     ```
 
@@ -37,23 +42,29 @@
 3. Config Postgresql
 
     `$ sudo -u postgres psql`
+
 - Create database
 
     `postgres=# create database db_name;`
+
 - Create user with encrypted password
 
     `postgres=# create user user_name with encrypted password 'user_pass';`
+
 - Grant database to user
 
     `postgres=# grant all privileges on database db_name to user_name;`
 
 4. Install requirements to virtualenv.
+
 - Navigate/to/project/root/path
 
     `$ cd ~/helloworld`
+
 - Activate virtualenv
 
     `$ workon helloworld`
+    
 - Install requirements
 
     `(env) $ pip3 install -r requirements.txt`
@@ -144,7 +155,7 @@
 8. Add a link of the nginx configuration & check the config.
 
     `$ sudo ln -s /etc/nginx/sites-available/helloworld /etc/nginx/sites-enabled`
-    
+
     `$ sudo nginx -t`
 
     if everything worked fine restart nginx with the following command
