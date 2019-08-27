@@ -1,13 +1,13 @@
 # Python/Django Hello World project.
 
 
-1. Install necessary packages.
+### Install necessary packages.
 
     `$ sudo apt-get update`
 
     `$ sudo apt-get install nginx python3-pip python3-dev ufw virtualenv postgresql postgresql-contrib libpq-dev`
 
-2. Install virtualenvwrapper & Config Shell Startup File & Create virtualenv folder.
+### Install virtualenvwrapper & Config Shell Startup File & Create virtualenv folder.
 
 - Create virtualevns folder
 
@@ -39,7 +39,7 @@
 
     `$ mkvirtualenv helloworld`
 
-3. Config Postgresql
+### Config Postgresql
 
     `$ sudo -u postgres psql`
 
@@ -55,7 +55,7 @@
 
     `postgres=# grant all privileges on database db_name to user_name;`
 
-4. Install requirements to virtualenv.
+### Install requirements to virtualenv.
 
 - Navigate/to/project/root/path
 
@@ -64,12 +64,12 @@
 - Activate virtualenv
 
     `$ workon helloworld`
-    
+
 - Install requirements
 
     `(env) $ pip3 install -r requirements.txt`
 
-5. Migrate DB & Create super user & run server .
+### Migrate DB & Create super user & run server .
 
     `(env) $ python3 manage.py migrate`
 
@@ -80,7 +80,7 @@
     It's engough for developing project in local.
     next steps are for deploy project to production server.
 
-6. Setting up gunicorn
+### Setting up gunicorn
 
     `(env) $ pip install gunicorn`
 
@@ -126,7 +126,7 @@
 
     `$ sudo systemctl restart gunicorn`
 
-7. Configuring nginx
+### Configuring nginx
 - Create a config file
 
     `$ sudo nano /etc/nginx/sites-available/helloworld`
@@ -152,7 +152,7 @@
     }
     ```
 
-8. Add a link of the nginx configuration & check the config.
+### Add a link of the nginx configuration & check the config.
 
     `$ sudo ln -s /etc/nginx/sites-available/helloworld /etc/nginx/sites-enabled`
 
