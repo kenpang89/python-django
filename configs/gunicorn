@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn service
+After=network.target
+
+[Service]
+User=user_name
+Group=www-data
+WorkingDirectory=/var/work/helloworld/
+ExecStart=/home/user_name/.virtualenvs/helloworld/bin/gunicorn --access-logfile - --workers 3 --bind unix:/var/work/helloworld/helloworld.sock wsgi:application
+
+[Install]
+WantedBy=multi-user.target
