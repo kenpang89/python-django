@@ -1,4 +1,4 @@
 echo "Deploy script started"
-cd /var/www/html
+cd /var/work/helloworld/configs
 sh pull.sh
 echo "Deploy script finished execution"

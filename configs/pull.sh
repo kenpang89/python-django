@@ -1,5 +1,5 @@
-echo "Navigate to project path ..."
-cd /home/webapps/helloworld
+echo "Navigate to project root path ..."
+cd ..
 echo "Done. \n\n"
 
 echo "Pull new changes ..."
