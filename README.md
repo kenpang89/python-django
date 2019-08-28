@@ -3,8 +3,9 @@
 
 ### Install necessary packages.
 
+\
     `$ sudo apt-get update`
-
+\
     `$ sudo apt-get install nginx python3-pip python3-dev ufw virtualenv postgresql postgresql-contrib libpq-dev`
 
 ### Install virtualenvwrapper & Config Shell Startup File & Create virtualenv folder.
@@ -40,7 +41,7 @@
     `$ mkvirtualenv helloworld`
 
 ### Config Postgresql
-
+\
     `$ sudo -u postgres psql`
 
 - Create database
@@ -70,28 +71,32 @@
     `(env) $ pip3 install -r requirements.txt`
 
 ### Migrate DB & Create super user & run server .
-
+\
     `(env) $ python3 manage.py migrate`
-
+\
     `(env) $ python3 manage.py createsuperuser`
-
+\
     `(env) $ python3 manage.py runserver`
-
+\
+\
     It's engough for developing project in local.
     next steps are for deploy project to production server.
 
 ### Setting up gunicorn
-
+\
     `(env) $ pip install gunicorn`
-
+\
+\
     if the development server is still running kill it change directory to your project folder and run the following command to run your site with gunicorn
-
+\
+\
     `(env) $ gunicorn --bind 0.0.0.0:8800 helloworld.wsgi:application`
 
+\
     if everythin is ok, kill gunicorn and exit the virtual environment with the following command
-
+\
     `(env) $ deactivate`
-
+\
 - Create gunicorn service file with below command
 
     `$ sudo vim /etc/systemd/system/gunicorn.service`
@@ -154,12 +159,16 @@
 
 ### Add a link of the nginx configuration & check the config.
 
+\
     `$ sudo ln -s /etc/nginx/sites-available/helloworld /etc/nginx/sites-enabled`
-
+\
+\
     `$ sudo nginx -t`
 
+\
     if everything worked fine restart nginx with the following command
-
+\
     `$ sudo systemctl restart nginx`
-
+\
+\
 The config files for nginx and gunicorn for this project are in `configs` folder.
