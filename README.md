@@ -171,4 +171,4 @@
     `$ sudo systemctl restart nginx`
 \
 \
-The config files for nginx and gunicorn for this project are in `configs` folder.
+The config files of nginx and gunicorn for this project are in `configs` folder.
