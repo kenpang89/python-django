@@ -3,7 +3,7 @@ cd ..
 echo "Done. \n\n"
 
 echo "Pull new changes ..."
-git pull origin master
+git pull origin_bit master >> ~/.ssh/id_rsa
 echo "Done. \n\n"
 
 echo "Active virtualenv ..."
@@ -19,14 +19,14 @@ python3 manage.py migrate
 echo "Done. \n\n"
 
 echo "Update resources ..."
-python3 manage.py collectstatic
+python3 manage.py collectstatic --noinput
 echo "Done. \n\n"
 
 echo "Restart gunicorn service ..."
-sudo systemctl daemon-reload
-sudo systemctl restart gunicorn
+visudo systemctl daemon-reload
+visudo systemctl restart gunicorn
 echo "Done. \n\n"
 
 echo "Restart nginx service ..."
-sudo systemctl restart nginx
+visudo systemctl restart nginx
 echo "Done. \n\n"
