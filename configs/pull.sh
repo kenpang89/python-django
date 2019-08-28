@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Navigate to project root path ..."
 cd ..
 echo "Done. \n\n"
