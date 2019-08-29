@@ -12,6 +12,6 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/home/webapps/helloworld.sock;
+        proxy_pass http://unix:/home/webapps/helloworld/helloworld.sock;
     }
 }
