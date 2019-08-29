@@ -6,18 +6,18 @@ pipelines:
   default:
       - step:
           script:
-            - cat ./configs/deploy.sh | ssh root@134.209.222.226
+            - cat ./configs/deploy.sh | ssh root@67.205.176.8
             - echo "Deploy step finished"
   branches:
     develop:
       - step:
           deployment: staging
           script:
-            - cat ./configs/deploy.sh | ssh root@134.209.222.226
+            - cat ./configs/deploy.sh | ssh root@67.205.176.8
             - echo "Deploy step finished"
     master:
       - step:
           deployment: production
           script:
-            - cat ./configs/deploy.sh | ssh root@134.209.222.226
+            - cat ./configs/deploy.sh | ssh root@67.205.176.8
             - echo "Deploy step finished"
