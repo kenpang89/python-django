@@ -6,7 +6,7 @@ pipelines:
   default:
       - step:
           script:
-            - cat ./configs/deploy.sh | ssh root@67.205.176.8
+            - cat ./configs/deploy.sh | ssh -t -t root@67.205.176.8
             - echo "Deploy step finished"
   branches:
     develop:
