@@ -4,7 +4,7 @@ cd ..
 echo "Done. \n\n"
 
 echo "Pull new changes ..."
-git pull origin_bit master >> ~/.ssh/id_rsa
+git pull origin master >> ~/.ssh/id_rsa
 echo "Done. \n\n"
 
 echo "Active virtualenv ..."

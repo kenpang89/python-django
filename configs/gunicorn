@@ -5,8 +5,8 @@ After=network.target
 [Service]
 User=user_name
 Group=www-data
-WorkingDirectory=/var/work/helloworld/
-ExecStart=/home/user_name/.virtualenvs/helloworld/bin/gunicorn --access-logfile - --workers 3 --bind unix:/var/work/helloworld/helloworld.sock wsgi:application
+WorkingDirectory=/home/webapps/helloworld/
+ExecStart=/home/.evns/env/bin/gunicorn --access-logfile - --workers 3 --bind unix:/home/webapps/helloworld/helloworld.sock wsgi:application
 
 [Install]
 WantedBy=multi-user.target

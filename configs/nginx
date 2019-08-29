@@ -4,14 +4,14 @@ server {
     location = /favicon.ico {access_log off;log_not_found off;}
 
     location /static {
-        alias /var/work/helloworld/static;
+        alias /home/webapps/helloworld/static;
     }
     location /media {
-        alias /var/work/helloworld/media;
+        alias /home/webapps/helloworld/media;
     }
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/var/work/helloworld/helloworld.sock;
+        proxy_pass http://unix:/home/webapps/helloworld.sock;
     }
 }

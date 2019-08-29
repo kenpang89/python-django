@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "Deploy script started"
-cd /var/work/helloworld/configs
-sh pull.sh
+cd /home/webapps/helloworld/configs
+sh setup.sh
 echo "Deploy script execution finished "
